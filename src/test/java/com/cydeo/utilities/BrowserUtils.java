@@ -50,6 +50,16 @@ public class BrowserUtils {
         Assert.assertTrue(actualTitle.contains(expectedTitle));
     }
 
+    public static void verifyURLContains(String expected) {
+        String actualTitle = Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actualTitle.contains(expected));
+    }
+
+    public static void verifyEqualsURL(String expectedURL) {
+        String actualTitleURL = Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actualTitleURL.contains(expectedURL));
+    }
+
     /*
       This method accepts WebElement target,
       and waits for that WebElement not to be displayed on the page
