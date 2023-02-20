@@ -50,6 +50,16 @@ public class BrowserUtils {
         Assert.assertTrue(actualTitle.contains(expectedTitle));
     }
 
+    public static void verifyURLContains(String expected) {
+        String actualTitle = Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actualTitle.contains(expected));
+    }
+
+    public static void verifyEqualsURL(String expectedURL) {
+        String actualTitleURL = Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actualTitleURL.contains(expectedURL));
+    }
+
     /*
       This method accepts WebElement target,
       and waits for that WebElement not to be displayed on the page
@@ -84,7 +94,7 @@ public class BrowserUtils {
         return result;
     }
 
-    public static List<String> dropdownOptionsAsString(WebElement dropdown ) {
+    public static List<String> dropdownOptionsAsString(WebElement dropdown) {
         Select select = new Select(dropdown);
         List<WebElement> actualMonth_WebElement = select.getOptions();
         List<String> actualMonths = new ArrayList<>();
@@ -92,5 +102,14 @@ public class BrowserUtils {
             actualMonths.add(eachElement.getText());
         }
         return actualMonths;
+    }
+
+    public static void clickRadioButton(List<WebElement> radioButtons, String attributeValue) {
+
+        for (WebElement each : radioButtons) {
+            if (each.getAttribute("value").equalsIgnoreCase(attributeValue)) {
+                each.click();
+            }
+        }
     }
 }
