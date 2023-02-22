@@ -73,7 +73,7 @@ public class WebTable_Step_Definitions {
     @Then("user sees below options under product dropdown")
     public void user_sees_below_options_under_product_dropdown(List<String> options) {
 
-        List<String> actualOptions = BrowserUtils.dropdownOptionsAsString(webTable_orderPage.productDropdown);
+        List<String> actualOptions = BrowserUtils.dropdownOptions_as_STRING(webTable_orderPage.productDropdown);
         Assert.assertEquals(options, actualOptions);
 
     }
