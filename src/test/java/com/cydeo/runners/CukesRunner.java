@@ -7,14 +7,17 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {
+                "pretty",
                 "html:target/cucumber-reports.html",
-                "rerun:target/rerun.txt"
+                "rerun:target/rerun.txt",
+                "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false,
-        tags = "@wip",
+        tags = "@mercedes",
         publish = true
+        //monochrome = false
 )
 public class CukesRunner {
 
