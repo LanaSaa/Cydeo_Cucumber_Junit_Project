@@ -33,7 +33,7 @@ Feature: Some of the general functionality verifications
     Then user should see "Jane Doe" in the first row of the web table
 
   @wip
-  Scenario Outline: Order place scenario
+  Scenario Template: Order place scenario
     Given user is already logged in to The Web table app
     When user is on the Order page
     And user enters quantity "<quantity>"
