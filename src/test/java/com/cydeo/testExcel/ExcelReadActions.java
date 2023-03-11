@@ -34,7 +34,8 @@ public class ExcelReadActions {
                 System.out.println(datasheet.getRow(i).getCell(0));
                 break;
             }
-
+// if there is empty cell it's getting NullPointerException
+            //if(datasheet.getRow(0).getCell(0) != null)
         }
     }
 }
